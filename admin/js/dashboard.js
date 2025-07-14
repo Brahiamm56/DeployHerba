@@ -405,14 +405,16 @@ function cerrarModal() {
 function mostrarConfirmModal(titulo, mensaje, onConfirm) {
     document.getElementById('confirmTitle').textContent = titulo;
     document.getElementById('confirmMessage').textContent = mensaje;
-    
-    const confirmBtn = document.getElementById('confirmBtn');
-    confirmBtn.onclick = () => {
+    confirmModal.style.display = 'block';
+
+    // Remover cualquier listener anterior y asignar el nuevo
+    const oldBtn = document.getElementById('confirmBtn');
+    const newBtn = oldBtn.cloneNode(true);
+    oldBtn.parentNode.replaceChild(newBtn, oldBtn);
+    newBtn.onclick = function() {
         onConfirm();
         cerrarConfirmModal();
     };
-    
-    confirmModal.style.display = 'block';
 }
 
 // Cerrar modal de confirmación
