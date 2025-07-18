@@ -449,7 +449,6 @@ function crearProductoHTML(producto) {
     producto.promocion.activa && producto.promocion.tipo
       ? `<div class="promotion-badge">${producto.promocion.tipo}</div>`
       : "";
-
   return `
         <div class="product-card" data-id="${producto._id}">
             ${promocionHTML}
@@ -458,7 +457,6 @@ function crearProductoHTML(producto) {
   }" class="product-image" 
                  onerror="this.src='https://via.placeholder.com/300x250/2a2a2a/cccccc?text=Imagen+no+disponible'">
             <div class="product-info">
-                <div class="product-category">${producto.categoria}</div>
                 <h3 class="product-title">${producto.nombre}</h3>
                 <div class="product-price">$${producto.precio.toLocaleString()}</div>
                 <div class="product-stock">
@@ -468,6 +466,7 @@ function crearProductoHTML(producto) {
                         : "Sin stock"
                     }
                 </div>
+                <div class="product-category">${producto.categoria}</div>
             </div>
         </div>
     `;

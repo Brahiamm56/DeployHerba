@@ -296,117 +296,350 @@
         </svg>
       </div>
     </section>
-    <!-- Sobre Nosotros -->
-    <section class="about-section animated-bg" id="about">
+    <!-- Sobre Nosotros y Beneficios -->
+    <section
+      class="about-benefits-section animated-bg"
+      id="about"
+      style="padding: 3.5em 0 2.5em 0"
+    >
       <div
-        class="container about-content"
-        style="
-          display: flex;
-          align-items: center;
-          gap: 2.5rem;
-          flex-wrap: wrap;
-          justify-content: center;
-        "
+        class="container about-benefits-content"
+        style="max-width: 900px; margin: 0 auto"
       >
-        <div class="about-text" style="flex: 1 1 320px; min-width: 260px">
-          <h3
+        <h2
+          style="
+            color: #ffd700;
+            font-size: 2.6rem;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 1.2em;
+            letter-spacing: 0.04em;
+            text-shadow: 0 2px 8px rgba(21, 92, 46, 0.1);
+          "
+        >
+          Sobre HerbaMate
+        </h2>
+        <p
+          style="
+            font-size: 1.25rem;
+            color: #fffbe6;
+            line-height: 1.7;
+            text-align: center;
+            margin-bottom: 2.5em;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          En HerbaMate nos apasiona el ritual del mate. Nos dedicamos a
+          seleccionar y acercarte las mejores marcas y productos del mercado,
+          para que disfrutes de una experiencia auténtica y compartas buenos
+          momentos con quienes más querés.
+        </p>
+        <h3
+          style="
+            color: #ffd700;
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1.2em;
+            letter-spacing: 0.02em;
+          "
+        >
+          ¿Por qué elegirnos?
+        </h3>
+        <div
+          class="benefits-cards-grid"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2em;
+            justify-content: center;
+            align-items: stretch;
+          "
+        >
+          <div
+            class="benefit-card"
             style="
-              color: #ffd700;
-              font-size: 2.1rem;
-              font-weight: 800;
-              margin-bottom: 0.5em;
-              letter-spacing: 0.03em;
-              text-shadow: 0 2px 8px rgba(21, 92, 46, 0.08);
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 1.5em;
+              box-shadow: 0 2px 18px #b6ff7a22;
+              padding: 2.2em 1.5em 1.5em 1.5em;
+              min-width: 220px;
+              max-width: 320px;
+              flex: 1 1 220px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              transition: box-shadow 0.18s, transform 0.18s;
+              border: 1.5px solid #b6ff7a33;
             "
           >
-            Sobre HerbaMate
-          </h3>
-          <p
+            <i
+              class="fas fa-leaf"
+              style="font-size: 2.5em; color: #b6ff7a; margin-bottom: 0.7em"
+            ></i>
+            <h4
+              style="
+                color: #ffd700;
+                font-size: 1.25em;
+                font-weight: 800;
+                margin-bottom: 0.3em;
+                text-align: center;
+              "
+            >
+              Natural y Artesanal
+            </h4>
+            <p style="color: #fffbe6; font-size: 1.08em; text-align: center">
+              Productos seleccionados, hechos con dedicación.
+            </p>
+          </div>
+          <div
+            class="benefit-card"
             style="
-              font-size: 1.18rem;
-              color: #fffbe6;
-              line-height: 1.7;
-              margin-bottom: 0.2em;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 1.5em;
+              box-shadow: 0 2px 18px #b6ff7a22;
+              padding: 2.2em 1.5em 1.5em 1.5em;
+              min-width: 220px;
+              max-width: 320px;
+              flex: 1 1 220px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              transition: box-shadow 0.18s, transform 0.18s;
+              border: 1.5px solid #b6ff7a33;
             "
           >
-            En HerbaMate nos apasiona el ritual del mate. Nos dedicamos a
-            seleccionar y acercarte las mejores marcas y productos del mercado,
-            para que disfrutes de una experiencia auténtica y compartas buenos
-            momentos con quienes más querés.
-          </p>
+            <i
+              class="fas fa-user-friends"
+              style="font-size: 2.5em; color: #b6ff7a; margin-bottom: 0.7em"
+            ></i>
+            <h4
+              style="
+                color: #ffd700;
+                font-size: 1.25em;
+                font-weight: 800;
+                margin-bottom: 0.3em;
+                text-align: center;
+              "
+            >
+              Atención personalizada
+            </h4>
+            <p style="color: #fffbe6; font-size: 1.08em; text-align: center">
+              Te asesoramos para que encuentres el producto ideal para vos.
+            </p>
+          </div>
+          <div
+            class="benefit-card"
+            style="
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 1.5em;
+              box-shadow: 0 2px 18px #b6ff7a22;
+              padding: 2.2em 1.5em 1.5em 1.5em;
+              min-width: 220px;
+              max-width: 320px;
+              flex: 1 1 220px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              transition: box-shadow 0.18s, transform 0.18s;
+              border: 1.5px solid #b6ff7a33;
+            "
+          >
+            <i
+              class="fas fa-star"
+              style="font-size: 2.5em; color: #b6ff7a; margin-bottom: 0.7em"
+            ></i>
+            <h4
+              style="
+                color: #ffd700;
+                font-size: 1.25em;
+                font-weight: 800;
+                margin-bottom: 0.3em;
+                text-align: center;
+              "
+            >
+              Calidad Premium
+            </h4>
+            <p style="color: #fffbe6; font-size: 1.08em; text-align: center">
+              Solo lo mejor para tu mateada.
+            </p>
+          </div>
         </div>
       </div>
     </section>
-    <!-- Beneficios -->
-    <section class="benefits-section animated-bg" id="benefits">
-      <div class="container benefits-content">
-        <h3>¿Por qué elegirnos?</h3>
-        <div class="benefits-grid">
-          <div class="benefit">
-            <i class="fas fa-leaf"></i>
-            <h4>Natural y Artesanal</h4>
-            <p>Productos seleccionados, hechos con dedicación.</p>
-          </div>
-          <div class="benefit">
-            <i class="fas fa-user-friends"></i>
-            <h4>Atención personalizada</h4>
-            <p>Te asesoramos para que encuentres el producto ideal para vos.</p>
-          </div>
-          <div class="benefit">
-            <i class="fas fa-star"></i>
-            <h4>Calidad Premium</h4>
-            <p>Solo lo mejor para tu mateada.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Testimonios -->
-    <!-- Sección de testimonios eliminada -->
     <!-- Productos -->
     <section class="products" id="productos">
       <div class="container">
         <!-- Barra de búsqueda arriba del listado de productos -->
-        <div class="search-bar-universal">
-          <div class="search-container">
+        <div
+          class="search-bar-universal"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 1.5em;
+          "
+        >
+          <div
+            class="search-container"
+            style="
+              background: #fff;
+              border-radius: 2em;
+              box-shadow: 0 2px 18px #b6ff7a22;
+              display: flex;
+              align-items: center;
+              padding: 0.2em 0.4em;
+              max-width: 420px;
+              width: 100%;
+            "
+          >
             <input
               type="text"
               id="searchInput"
               placeholder="Buscar productos..."
               class="search-input"
+              style="
+                border: none;
+                background: transparent;
+                font-size: 1.18em;
+                color: #155c2e;
+                padding: 0.8em 1.2em;
+                border-radius: 2em 0 0 2em;
+                outline: none;
+                flex: 1;
+              "
             />
-            <button id="searchBtn" class="search-btn">
+            <button
+              id="searchBtn"
+              class="search-btn"
+              style="
+                background: #b6ff7a;
+                color: #155c2e;
+                border: none;
+                border-radius: 0 2em 2em 0;
+                font-size: 1.25em;
+                font-weight: 700;
+                padding: 0.8em 1.5em;
+                cursor: pointer;
+                transition: background 0.18s;
+              "
+            >
               <i class="fas fa-search"></i>
             </button>
           </div>
         </div>
-        <div class="buscador-texto-amigable">¿Qué buscás hoy?</div>
-        <div class="products-header">
-          <h2 class="section-title">Nuestros Productos</h2>
+        <div
+          class="buscador-texto-amigable"
+          style="
+            text-align: center;
+            color: #b6ff7a;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 1.2em;
+          "
+        >
+          ¿Qué buscás hoy?
+        </div>
+        <div class="products-header" style="text-align: center">
+          <h2
+            class="section-title"
+            style="
+              font-size: 2.5rem;
+              font-weight: 900;
+              color: #fff;
+              text-shadow: 0 2px 8px #155c2e33;
+              margin-bottom: 0.7em;
+            "
+          >
+            Nuestros Productos
+          </h2>
           <div style="display: flex; justify-content: center; margin: 1.5rem 0">
             <a
               href="#productos"
               class="btn btn-primary"
               style="
-                font-size: 1.15rem;
-                padding: 0.8em 2.6em;
+                font-size: 1.18rem;
+                padding: 1em 2.8em;
                 border-radius: 2em;
+                background: #ffd700;
+                color: #155c2e;
+                font-weight: 800;
+                box-shadow: 0 2px 18px #ffd70033;
+                border: none;
+                transition: background 0.18s, color 0.18s;
               "
+              onmouseover="this.style.background='#b6ff7a';this.style.color='#155c2e'"
+              onmouseout="this.style.background='#ffd700';this.style.color='#155c2e'"
               >Ver todos</a
             >
           </div>
         </div>
         <!-- Grid de categorías elegante -->
-        <div class="categories-chips" id="categorias">
-          <button class="chip filter-btn active" data-category="todos">
+        <div
+          class="categories-chips"
+          id="categorias"
+          style="
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1em;
+            justify-content: center;
+            overflow-x: auto;
+            margin-bottom: 2em;
+            padding-bottom: 0.5em;
+          "
+        >
+          <button
+            class="chip filter-btn active"
+            data-category="todos"
+            style="
+              min-width: 120px;
+              font-size: 1.12em;
+              font-weight: 700;
+              background: #ffd700;
+              color: #155c2e;
+              border: none;
+              box-shadow: 0 2px 12px #ffd70033;
+            "
+          >
             Todos
           </button>
-          <button class="chip filter-btn" data-category="Mates">Mates</button>
-          <button class="chip filter-btn" data-category="Yerbas">Yerbas</button>
-          <button class="chip filter-btn" data-category="Termos">Termos</button>
-          <button class="chip filter-btn" data-category="Bombillas">
+          <button
+            class="chip filter-btn"
+            data-category="Mates"
+            style="min-width: 120px; font-size: 1.12em; font-weight: 700"
+          >
+            Mates
+          </button>
+          <button
+            class="chip filter-btn"
+            data-category="Yerbas"
+            style="min-width: 120px; font-size: 1.12em; font-weight: 700"
+          >
+            Yerbas
+          </button>
+          <button
+            class="chip filter-btn"
+            data-category="Termos"
+            style="min-width: 120px; font-size: 1.12em; font-weight: 700"
+          >
+            Termos
+          </button>
+          <button
+            class="chip filter-btn"
+            data-category="Bombillas"
+            style="min-width: 120px; font-size: 1.12em; font-weight: 700"
+          >
             Bombillas
           </button>
-          <button class="chip filter-btn" data-category="Otros">Otros</button>
+          <button
+            class="chip filter-btn"
+            data-category="Otros"
+            style="min-width: 120px; font-size: 1.12em; font-weight: 700"
+          >
+            Otros
+          </button>
         </div>
         <div id="loading" class="loading">
           <div class="spinner"></div>
