@@ -312,19 +312,20 @@ function crearProductoHTML(producto) {
     const promocionHTML = producto.promocion.activa && producto.promocion.tipo 
         ? `<div class="promotion-badge">${producto.promocion.tipo}</div>` 
         : '';
-    
     return `
         <div class="product-card" data-id="${producto._id}">
             ${promocionHTML}
-            <img src="${producto.imagen}" alt="${producto.nombre}" class="product-image" 
-                 onerror="this.src='https://via.placeholder.com/300x250/2a2a2a/cccccc?text=Imagen+no+disponible'">
+            <div class="product-image-container">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="product-image product-image-zoom" 
+                     onerror="this.src='https://via.placeholder.com/400x400/2a2a2a/cccccc?text=Imagen+no+disponible'">
+            </div>
             <div class="product-info">
-                <div class="product-category">${producto.categoria}</div>
                 <h3 class="product-title">${producto.nombre}</h3>
                 <div class="product-price">$${producto.precio.toLocaleString()}</div>
                 <div class="product-stock">
                     ${producto.stock > 0 ? `Stock: ${producto.stock} unidades` : 'Sin stock'}
                 </div>
+                <div class="product-category">${producto.categoria}</div>
             </div>
         </div>
     `;
@@ -406,48 +407,42 @@ function mostrarModalProducto(producto) {
     const promocionHTML = producto.promocion.activa && producto.promocion.tipo 
         ? `<div class="promotion-badge">${producto.promocion.tipo}</div>` 
         : '';
-    
     const descripcionHTML = producto.descripcion 
-        ? `<p class="product-description">${producto.descripcion}</p>` 
+        ? `<p class="modal-product-description">${producto.descripcion}</p>` 
         : '';
-    
     modalContent.innerHTML = `
-        <div class="modal-product">
-            ${promocionHTML}
-            <img src="${producto.imagen}" alt="${producto.nombre}" class="modal-product-image"
-                 onerror="this.src='https://via.placeholder.com/400x300/2a2a2a/cccccc?text=Imagen+no+disponible'">
-            <div class="modal-product-info">
-                <div class="product-category">${producto.categoria}</div>
-                <h2 class="product-title">${producto.nombre}</h2>
+        <div class="modal-product-grid2">
+            <div class="modal-product-image-container2">
+                <img src="${producto.imagen}" alt="${producto.nombre}" class="modal-product-image2"
+                     onerror="this.src='https://via.placeholder.com/600x400/2a2a2a/cccccc?text=Imagen+no+disponible'">
+            </div>
+            <div class="modal-product-info2">
+                <div class="modal-product-category2">${producto.categoria}</div>
+                <h2 class="modal-product-title2">${producto.nombre}</h2>
                 ${descripcionHTML}
-                <div class="product-price">$${producto.precio.toLocaleString()}</div>
-                <div class="product-stock">
-                    ${producto.stock > 0 ? `Stock: ${producto.stock} unidades` : 'Sin stock'}
-                </div>
-                <div class="product-actions">
-                    <div style='display:flex; align-items:center; gap:0.7em; justify-content:center;'>
-                        <label for='cantidadInput' style='font-size:1.08em;'>Unidades:</label>
-                        <button id='btnRestar' style='font-size:1.2em; padding:2px 10px; border-radius:7px; border:1.5px solid #b6ff7a; background:#fff; color:#155c2e; font-weight:700; cursor:pointer;'>-</button>
-                        <input id='cantidadInput' type='number' min='1' max='${producto.stock}' value='1' style='width:60px; font-size:1.1em; border-radius:7px; border:1.5px solid #b6ff7a; padding:2px 7px; text-align:center;'>
-                        <button id='btnSumar' style='font-size:1.2em; padding:2px 10px; border-radius:7px; border:1.5px solid #b6ff7a; background:#fff; color:#155c2e; font-weight:700; cursor:pointer;'>+</button>
+                <div class="modal-product-price2">$${producto.precio.toLocaleString()}</div>
+                <div class="modal-product-stock2">${producto.stock > 0 ? `Stock: ${producto.stock} unidades` : 'Sin stock'}</div>
+                <div class="modal-product-actions2">
+                    <div class="modal-product-qty-row2">
+                        <label for="cantidadInput" class="modal-product-qty-label2">Unidades:</label>
+                        <button id="btnRestar" class="modal-product-qty-btn2">-</button>
+                        <input id="cantidadInput" type="number" min="1" max="${producto.stock}" value="1" class="modal-product-qty-input2">
+                        <button id="btnSumar" class="modal-product-qty-btn2">+</button>
                     </div>
-                    <button class="btn btn-primary" id="addToCartBtn">
-                        <i class="fas fa-shopping-cart"></i> Agregar al carrito
-                    </button>
+                    <button class="btn modal-btn2 modal-btn-cart2" id="addToCartBtn"><i class="fas fa-shopping-cart"></i> Agregar al carrito</button>
                     <a href="https://wa.me/5493624562611?text=Hola! Me interesa el producto: ${producto.nombre} - $${producto.precio}" 
-                       class="btn btn-primary" target="_blank" rel="noopener">
-                        <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-                    </a>
+                       class="btn modal-btn2 modal-btn-whatsapp2" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Consultar por WhatsApp</a>
                 </div>
             </div>
         </div>
+        <button class="modal-close-btn2" id="modalCloseBtn2" title="Cerrar">&times;</button>
     `;
-    // Evento para agregar al carrito y para los botones + y -
     setTimeout(() => {
         const btn = document.getElementById('addToCartBtn');
         const cantidadInput = document.getElementById('cantidadInput');
         const btnSumar = document.getElementById('btnSumar');
         const btnRestar = document.getElementById('btnRestar');
+        const closeBtn = document.getElementById('modalCloseBtn2');
         if (btnSumar && cantidadInput) btnSumar.onclick = () => {
             let val = parseInt(cantidadInput.value) || 1;
             if (val < producto.stock) cantidadInput.value = val + 1;
@@ -465,6 +460,7 @@ function mostrarModalProducto(producto) {
             }
             mostrarMensajeAgregado(producto.nombre, cantidad);
         };
+        if (closeBtn) closeBtn.onclick = cerrarModal;
     }, 0);
     productModal.style.display = 'block';
     document.body.style.overflow = 'hidden';
